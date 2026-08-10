@@ -1,0 +1,148 @@
+{
+  "similarity_matrix_size": 660,
+  "drug_count": 1430,
+  "se_count": 6123,
+  "test_results": [
+    {
+      "drug": "bicalutamide",
+      "drug_id": "CID100002375",
+      "known_se_count": 202,
+      "predictions": [
+        {
+          "se": "Arthralgia",
+          "score": 129.96132263961763
+        },
+        {
+          "se": "Hypotension",
+          "score": 127.06683591337996
+        },
+        {
+          "se": "Discomfort",
+          "score": 119.38340348270678
+        },
+        {
+          "se": "Tachycardia",
+          "score": 117.69152296018106
+        },
+        {
+          "se": "Anaphylactic shock",
+          "score": 114.4036349799024
+        },
+        {
+          "se": "Malaise",
+          "score": 111.78956654549243
+        },
+        {
+          "se": "Ill-defined disorder",
+          "score": 108.66697423597014
+        },
+        {
+          "se": "Palpitations",
+          "score": 108.27510893719148
+        },
+        {
+          "se": "Vertigo",
+          "score": 107.837974965513
+        },
+        {
+          "se": "Leukopenia",
+          "score": 105.01573670306233
+        }
+      ]
+    },
+    {
+      "drug": "docetaxel",
+      "drug_id": "CID100003143",
+      "known_se_count": 302,
+      "predictions": [
+        {
+          "se": "Urticaria",
+          "score": 127.24751432633475
+        },
+        {
+          "se": "Hyperhidrosis",
+          "score": 107.16660292979714
+        },
+        {
+          "se": "Discomfort",
+          "score": 100.494549807601
+        },
+        {
+          "se": "Anxiety",
+          "score": 99.70951375462691
+        },
+        {
+          "se": "Malaise",
+          "score": 94.14918270924282
+        },
+        {
+          "se": "Ill-defined disorder",
+          "score": 91.42500146846814
+        },
+        {
+          "se": "Vertigo",
+          "score": 90.28338058504316
+        },
+        {
+          "se": "Angioedema",
+          "score": 88.20122380250005
+        },
+        {
+          "se": "Flatulence",
+          "score": 82.47987140130259
+        },
+        {
+          "se": "Tremor",
+          "score": 81.54747288409921
+        }
+      ]
+    },
+    {
+      "drug": "prednisone",
+      "drug_id": "CID100004900",
+      "known_se_count": 259,
+      "predictions": [
+        {
+          "se": "Gastrointestinal disorder",
+          "score": 102.46679065875726
+        },
+        {
+          "se": "Dyspnoea",
+          "score": 100.64283170867563
+        },
+        {
+          "se": "Pain",
+          "score": 99.50783866737629
+        },
+        {
+          "se": "Somnolence",
+          "score": 93.09772694822803
+        },
+        {
+          "se": "Hypotension",
+          "score": 90.69602843136136
+        },
+        {
+          "se": "Thrombocytopenia",
+          "score": 85.42663753045176
+        },
+        {
+          "se": "Cough",
+          "score": 83.97517028503857
+        },
+        {
+          "se": "Dry mouth",
+          "score": 82.53840372759727
+        },
+        {
+          "se": "Chest pain",
+          "score": 82.18900962953103
+        },
+        {
+          "se": "Confusional state",
+          "score": 79.83076277872229
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,586 @@
+{
+  "title": "HP518 ADR 预测 — 扩展药物集融合分析报告",
+  "timestamp": "2026-05-14T13:50:19",
+  "expanded_drug_count": 13,
+  "expanded_drugs": {
+    "enzalutamide": {
+      "cn_name": "恩扎卢胺",
+      "category": "AR抑制剂(2代)",
+      "reports": 11844
+    },
+    "apalutamide": {
+      "cn_name": "阿帕他胺",
+      "category": "AR抑制剂(2代)",
+      "reports": 1351
+    },
+    "darolutamide": {
+      "cn_name": "达洛鲁胺",
+      "category": "AR抑制剂(2代)",
+      "reports": 541
+    },
+    "bicalutamide": {
+      "cn_name": "比卡鲁胺",
+      "category": "AR抑制剂(1代)",
+      "reports": 8944
+    },
+    "flutamide": {
+      "cn_name": "氟他胺",
+      "category": "AR抑制剂(1代)",
+      "reports": 1053
+    },
+    "abiraterone": {
+      "cn_name": "阿比特龙",
+      "category": "CYP17抑制剂",
+      "reports": 14560
+    },
+    "docetaxel": {
+      "cn_name": "多西他赛",
+      "category": "化疗-紫杉烷",
+      "reports": 70037
+    },
+    "cabazitaxel": {
+      "cn_name": "卡巴他赛",
+      "category": "化疗-紫杉烷",
+      "reports": 2017
+    },
+    "olaparib": {
+      "cn_name": "奥拉帕尼",
+      "category": "PARP抑制剂",
+      "reports": 5660
+    },
+    "rucaparib": {
+      "cn_name": "卢卡帕尼",
+      "category": "PARP抑制剂",
+      "reports": 438
+    },
+    "radium 223": {
+      "cn_name": "镭-223",
+      "category": "放射性核素",
+      "reports": 182
+    },
+    "leuprolide": {
+      "cn_name": "亮丙瑞林",
+      "category": "GnRH激动剂",
+      "reports": 8474
+    },
+    "goserelin": {
+      "cn_name": "戈舍瑞林",
+      "category": "GnRH激动剂",
+      "reports": 5621
+    }
+  },
+  "stability_analysis": {
+    "fully_stable": 2,
+    "rank_changed": 34,
+    "dropped_from_top50": 14,
+    "new_entered_top50": 14
+  },
+  "top50_predictions_expanded": [
+    {
+      "rank": 1,
+      "adr": "FATIGUE",
+      "fusion_score": 105.0,
+      "faers_total_count": 8853,
+      "faers_drug_count": 13,
+      "hp518_validated": true,
+      "base_rank": 1,
+      "rank_change": 0
+    },
+    {
+      "rank": 2,
+      "adr": "NAUSEA",
+      "fusion_score": 105.0,
+      "faers_total_count": 6596,
+      "faers_drug_count": 13,
+      "hp518_validated": true,
+      "base_rank": 2,
+      "rank_change": 0
+    },
+    {
+      "rank": 3,
+      "adr": "VOMITING",
+      "fusion_score": 105.0,
+      "faers_total_count": 4257,
+      "faers_drug_count": 13,
+      "hp518_validated": true,
+      "base_rank": 10,
+      "rank_change": 7
+    },
+    {
+      "rank": 4,
+      "adr": "DECREASED APPETITE",
+      "fusion_score": 105.0,
+      "faers_total_count": 3690,
+      "faers_drug_count": 13,
+      "hp518_validated": true,
+      "base_rank": 3,
+      "rank_change": -1
+    },
+    {
+      "rank": 5,
+      "adr": "CONSTIPATION",
+      "fusion_score": 105.0,
+      "faers_total_count": 2312,
+      "faers_drug_count": 13,
+      "hp518_validated": true,
+      "base_rank": 4,
+      "rank_change": -1
+    },
+    {
+      "rank": 6,
+      "adr": "DEATH",
+      "fusion_score": 90.0,
+      "faers_total_count": 7388,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 28,
+      "rank_change": 22
+    },
+    {
+      "rank": 7,
+      "adr": "DIARRHOEA",
+      "fusion_score": 90.0,
+      "faers_total_count": 7697,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 8,
+      "rank_change": 1
+    },
+    {
+      "rank": 8,
+      "adr": "MALIGNANT NEOPLASM PROGRESSION",
+      "fusion_score": 90.0,
+      "faers_total_count": 6230,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 30,
+      "rank_change": 22
+    },
+    {
+      "rank": 9,
+      "adr": "ASTHENIA",
+      "fusion_score": 90.0,
+      "faers_total_count": 5145,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 5,
+      "rank_change": -4
+    },
+    {
+      "rank": 10,
+      "adr": "ANAEMIA",
+      "fusion_score": 90.0,
+      "faers_total_count": 4701,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 9,
+      "rank_change": -1
+    },
+    {
+      "rank": 11,
+      "adr": "NEUTROPENIA",
+      "fusion_score": 90.0,
+      "faers_total_count": 4756,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 39,
+      "rank_change": 28
+    },
+    {
+      "rank": 12,
+      "adr": "OFF LABEL USE",
+      "fusion_score": 90.0,
+      "faers_total_count": 4629,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 48,
+      "rank_change": 36
+    },
+    {
+      "rank": 13,
+      "adr": "DISEASE PROGRESSION",
+      "fusion_score": 90.0,
+      "faers_total_count": 4473,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 42,
+      "rank_change": 29
+    },
+    {
+      "rank": 14,
+      "adr": "DRUG INEFFECTIVE",
+      "fusion_score": 90.0,
+      "faers_total_count": 4260,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 31,
+      "rank_change": 17
+    },
+    {
+      "rank": 15,
+      "adr": "DYSPNOEA",
+      "fusion_score": 90.0,
+      "faers_total_count": 4242,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 11,
+      "rank_change": -4
+    },
+    {
+      "rank": 16,
+      "adr": "DIZZINESS",
+      "fusion_score": 90.0,
+      "faers_total_count": 2857,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 7,
+      "rank_change": -9
+    },
+    {
+      "rank": 17,
+      "adr": "PNEUMONIA",
+      "fusion_score": 90.0,
+      "faers_total_count": 2903,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 13,
+      "rank_change": -4
+    },
+    {
+      "rank": 18,
+      "adr": "ARTHRALGIA",
+      "fusion_score": 90.0,
+      "faers_total_count": 2518,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    },
+    {
+      "rank": 19,
+      "adr": "MALAISE",
+      "fusion_score": 90.0,
+      "faers_total_count": 2118,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 18,
+      "rank_change": -1
+    },
+    {
+      "rank": 20,
+      "adr": "ABDOMINAL PAIN",
+      "fusion_score": 90.0,
+      "faers_total_count": 2015,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": 37,
+      "rank_change": 17
+    },
+    {
+      "rank": 21,
+      "adr": "GENERAL PHYSICAL HEALTH DETERIORATION",
+      "fusion_score": 90.0,
+      "faers_total_count": 1670,
+      "faers_drug_count": 13,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    },
+    {
+      "rank": 22,
+      "adr": "PAIN",
+      "fusion_score": 88.5,
+      "faers_total_count": 3940,
+      "faers_drug_count": 12,
+      "hp518_validated": false,
+      "base_rank": 14,
+      "rank_change": -8
+    },
+    {
+      "rank": 23,
+      "adr": "PYREXIA",
+      "fusion_score": 88.5,
+      "faers_total_count": 3643,
+      "faers_drug_count": 12,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    },
+    {
+      "rank": 24,
+      "adr": "FALL",
+      "fusion_score": 88.5,
+      "faers_total_count": 2368,
+      "faers_drug_count": 12,
+      "hp518_validated": false,
+      "base_rank": 32,
+      "rank_change": 8
+    },
+    {
+      "rank": 25,
+      "adr": "METASTASES TO BONE",
+      "fusion_score": 88.5,
+      "faers_total_count": 2456,
+      "faers_drug_count": 12,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    },
+    {
+      "rank": 26,
+      "adr": "BACK PAIN",
+      "fusion_score": 88.5,
+      "faers_total_count": 2295,
+      "faers_drug_count": 12,
+      "hp518_validated": false,
+      "base_rank": 12,
+      "rank_change": -14
+    },
+    {
+      "rank": 27,
+      "adr": "THROMBOCYTOPENIA",
+      "fusion_score": 88.5,
+      "faers_total_count": 2331,
+      "faers_drug_count": 12,
+      "hp518_validated": false,
+      "base_rank": 38,
+      "rank_change": 11
+    },
+    {
+      "rank": 28,
+      "adr": "RASH",
+      "fusion_score": 88.5,
+      "faers_total_count": 2080,
+      "faers_drug_count": 12,
+      "hp518_validated": false,
+      "base_rank": 22,
+      "rank_change": -6
+    },
+    {
+      "rank": 29,
+      "adr": "WEIGHT DECREASED",
+      "fusion_score": 88.5,
+      "faers_total_count": 1842,
+      "faers_drug_count": 12,
+      "hp518_validated": false,
+      "base_rank": 17,
+      "rank_change": -12
+    },
+    {
+      "rank": 30,
+      "adr": "SEPSIS",
+      "fusion_score": 88.5,
+      "faers_total_count": 1839,
+      "faers_drug_count": 12,
+      "hp518_validated": false,
+      "base_rank": 27,
+      "rank_change": -3
+    },
+    {
+      "rank": 31,
+      "adr": "URINARY TRACT INFECTION",
+      "fusion_score": 88.5,
+      "faers_total_count": 1665,
+      "faers_drug_count": 12,
+      "hp518_validated": false,
+      "base_rank": 15,
+      "rank_change": -16
+    },
+    {
+      "rank": 32,
+      "adr": "PAIN IN EXTREMITY",
+      "fusion_score": 88.5,
+      "faers_total_count": 1543,
+      "faers_drug_count": 12,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    },
+    {
+      "rank": 33,
+      "adr": "PROSTATIC SPECIFIC ANTIGEN INCREASED",
+      "fusion_score": 86.9,
+      "faers_total_count": 2721,
+      "faers_drug_count": 11,
+      "hp518_validated": false,
+      "base_rank": 29,
+      "rank_change": -4
+    },
+    {
+      "rank": 34,
+      "adr": "NEUROPATHY PERIPHERAL",
+      "fusion_score": 86.9,
+      "faers_total_count": 2742,
+      "faers_drug_count": 11,
+      "hp518_validated": false,
+      "base_rank": 23,
+      "rank_change": -11
+    },
+    {
+      "rank": 35,
+      "adr": "HEADACHE",
+      "fusion_score": 86.9,
+      "faers_total_count": 2295,
+      "faers_drug_count": 11,
+      "hp518_validated": false,
+      "base_rank": 19,
+      "rank_change": -16
+    },
+    {
+      "rank": 36,
+      "adr": "HYPERTENSION",
+      "fusion_score": 86.9,
+      "faers_total_count": 1736,
+      "faers_drug_count": 11,
+      "hp518_validated": false,
+      "base_rank": 16,
+      "rank_change": -20
+    },
+    {
+      "rank": 37,
+      "adr": "COUGH",
+      "fusion_score": 86.9,
+      "faers_total_count": 1555,
+      "faers_drug_count": 11,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    },
+    {
+      "rank": 38,
+      "adr": "DEHYDRATION",
+      "fusion_score": 85.4,
+      "faers_total_count": 1757,
+      "faers_drug_count": 10,
+      "hp518_validated": false,
+      "base_rank": 47,
+      "rank_change": 9
+    },
+    {
+      "rank": 39,
+      "adr": "ACUTE KIDNEY INJURY",
+      "fusion_score": 85.4,
+      "faers_total_count": 1532,
+      "faers_drug_count": 10,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    },
+    {
+      "rank": 40,
+      "adr": "FEBRILE NEUTROPENIA",
+      "fusion_score": 83.8,
+      "faers_total_count": 3763,
+      "faers_drug_count": 9,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    },
+    {
+      "rank": 41,
+      "adr": "HOT FLUSH",
+      "fusion_score": 83.8,
+      "faers_total_count": 2616,
+      "faers_drug_count": 9,
+      "hp518_validated": false,
+      "base_rank": 6,
+      "rank_change": -35
+    },
+    {
+      "rank": 42,
+      "adr": "PROSTATE CANCER",
+      "fusion_score": 83.8,
+      "faers_total_count": 1725,
+      "faers_drug_count": 9,
+      "hp518_validated": false,
+      "base_rank": 40,
+      "rank_change": -2
+    },
+    {
+      "rank": 43,
+      "adr": "ALOPECIA",
+      "fusion_score": 82.3,
+      "faers_total_count": 18315,
+      "faers_drug_count": 8,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    },
+    {
+      "rank": 44,
+      "adr": "HYPOTENSION",
+      "fusion_score": 82.3,
+      "faers_total_count": 1386,
+      "faers_drug_count": 10,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    },
+    {
+      "rank": 45,
+      "adr": "PRURITUS",
+      "fusion_score": 81.6,
+      "faers_total_count": 1300,
+      "faers_drug_count": 11,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    },
+    {
+      "rank": 46,
+      "adr": "PRODUCT USE IN UNAPPROVED INDICATION",
+      "fusion_score": 81.0,
+      "faers_total_count": 1392,
+      "faers_drug_count": 9,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    },
+    {
+      "rank": 47,
+      "adr": "CHEST PAIN",
+      "fusion_score": 79.6,
+      "faers_total_count": 1166,
+      "faers_drug_count": 12,
+      "hp518_validated": false,
+      "base_rank": 26,
+      "rank_change": -21
+    },
+    {
+      "rank": 48,
+      "adr": "DRUG INTERACTION",
+      "fusion_score": 79.3,
+      "faers_total_count": 1271,
+      "faers_drug_count": 10,
+      "hp518_validated": false,
+      "base_rank": 50,
+      "rank_change": 2
+    },
+    {
+      "rank": 49,
+      "adr": "MYALGIA",
+      "fusion_score": 79.3,
+      "faers_total_count": 1388,
+      "faers_drug_count": 8,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    },
+    {
+      "rank": 50,
+      "adr": "HAEMOGLOBIN DECREASED",
+      "fusion_score": 79.3,
+      "faers_total_count": 1215,
+      "faers_drug_count": 11,
+      "hp518_validated": false,
+      "base_rank": null,
+      "rank_change": "NEW"
+    }
+  ],
+  "conclusions": [
+    "扩展至 13 个药物后，Top 50 中有 2 个排名完全不变",
+    "排名变化主要来自化疗/PARP抑制剂类药物带来的新 ADR 信号",
+    "核心 ADR（Fatigue/Nausea/Appetite/Constipation）排名稳定，预测可信度高",
+    "建议将扩展分析作为最终预测清单的基础"
+  ]
+}

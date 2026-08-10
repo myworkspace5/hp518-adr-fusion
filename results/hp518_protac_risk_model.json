@@ -1,0 +1,677 @@
+{
+  "title": "HP518 PROTAC 特异性风险建模报告",
+  "timestamp": "2026-05-14T13:42:12",
+  "e3_ligase_data": {
+    "bavdegalutamide": {
+      "cn_name": "Bavdegalutamide(ARV-110)",
+      "category": "PROTAC-AR",
+      "e3_ligase": "VHL",
+      "total_reports": 0,
+      "unique_adrs": 0
+    },
+    "vepdegestrant": {
+      "cn_name": "Vepdegestrant(ARV-471)",
+      "category": "PROTAC-ER",
+      "e3_ligase": "VHL",
+      "total_reports": 2,
+      "unique_adrs": 5
+    },
+    "lenalidomide": {
+      "cn_name": "来那度胺",
+      "category": "IMiD-CRBN",
+      "e3_ligase": "CRBN",
+      "total_reports": 70581,
+      "unique_adrs": 100
+    },
+    "pomalidomide": {
+      "cn_name": "泊马度胺",
+      "category": "IMiD-CRBN",
+      "e3_ligase": "CRBN",
+      "total_reports": 13766,
+      "unique_adrs": 100
+    },
+    "thalidomide": {
+      "cn_name": "沙利度胺",
+      "category": "IMiD-CRBN",
+      "e3_ligase": "CRBN",
+      "total_reports": 14679,
+      "unique_adrs": 100
+    },
+    "ixazomib": {
+      "cn_name": "伊沙佐米",
+      "category": "Proteasome-Inhibitor",
+      "e3_ligase": "N/A",
+      "total_reports": 12221,
+      "unique_adrs": 100
+    }
+  },
+  "crbn_toxicity_profile": [
+    {
+      "adr": "OFF LABEL USE",
+      "total_count": 8352
+    },
+    {
+      "adr": "PLASMA CELL MYELOMA",
+      "total_count": 7324
+    },
+    {
+      "adr": "PNEUMONIA",
+      "total_count": 5676
+    },
+    {
+      "adr": "DIARRHOEA",
+      "total_count": 5437
+    },
+    {
+      "adr": "NEUTROPENIA",
+      "total_count": 4938
+    },
+    {
+      "adr": "FATIGUE",
+      "total_count": 4820
+    },
+    {
+      "adr": "DEATH",
+      "total_count": 4615
+    },
+    {
+      "adr": "THROMBOCYTOPENIA",
+      "total_count": 3721
+    },
+    {
+      "adr": "DRUG INEFFECTIVE",
+      "total_count": 3616
+    },
+    {
+      "adr": "ANAEMIA",
+      "total_count": 3422
+    },
+    {
+      "adr": "NEUROPATHY PERIPHERAL",
+      "total_count": 3312
+    },
+    {
+      "adr": "DISEASE PROGRESSION",
+      "total_count": 3216
+    },
+    {
+      "adr": "RASH",
+      "total_count": 3195
+    },
+    {
+      "adr": "PYREXIA",
+      "total_count": 3044
+    },
+    {
+      "adr": "NAUSEA",
+      "total_count": 2563
+    },
+    {
+      "adr": "DYSPNOEA",
+      "total_count": 2296
+    },
+    {
+      "adr": "ASTHENIA",
+      "total_count": 2275
+    },
+    {
+      "adr": "INFECTION",
+      "total_count": 2206
+    },
+    {
+      "adr": "COVID-19",
+      "total_count": 2186
+    },
+    {
+      "adr": "PRODUCT DOSE OMISSION ISSUE",
+      "total_count": 2096
+    }
+  ],
+  "protac_specific_risks": {
+    "CRBN-related": {
+      "teratogenicity": {
+        "name": "Teratogenicity / Embryo-fetal toxicity",
+        "cn_name": "致畸性 / 胚胎-胎儿毒性",
+        "evidence": "沙利度胺历史教训; CRBN 介导的 SALL4/IKZF1 降解",
+        "severity": "Critical",
+        "mechanism": "CRBN-neosubstrate recruitment → SALL4/P63 degradation",
+        "monitoring": "妊娠测试、严格避孕"
+      },
+      "neutropenia": {
+        "name": "Neutropenia",
+        "cn_name": "中性粒细胞减少症",
+        "evidence": "IMiD 类药物常见剂量限制性毒性; IKZF1/3 降解影响造血",
+        "severity": "High",
+        "mechanism": "IKZF1/Ikaros family degradation → hematopoietic disruption",
+        "monitoring": "定期 CBC 监测"
+      },
+      "venous_thromboembolism": {
+        "name": "Venous Thromboembolism (VTE/DVT/PE)",
+        "cn_name": "静脉血栓栓塞",
+        "evidence": "来那度胺/泊马度胺黑框警告",
+        "severity": "High",
+        "mechanism": "多因素: TNFα变化、内皮细胞损伤、血小板激活",
+        "monitoring": "VTE 风险评估、必要时预防性抗凝"
+      },
+      "secondary_malignancies": {
+        "name": "Secondary Malignancies (SPM)",
+        "cn_name": "第二原发恶性肿瘤",
+        "evidence": "IMiD 长期使用增加 SPM 风险",
+        "severity": "High",
+        "mechanism": "免疫监视受损 + DNA损伤累积",
+        "monitoring": "长期随访、皮肤检查"
+      }
+    },
+    "VHL-related": {
+      "hypertension": {
+        "name": "Hypertension",
+        "cn_name": "高血压",
+        "evidence": "VHL-HIF通路参与血压调节; VHL抑制剂可能影响",
+        "severity": "Moderate",
+        "mechanism": "HIF-1α 稳定化 → 血管重构/水钠潴留",
+        "monitoring": "定期血压监测"
+      },
+      "renal_effects": {
+        "name": "Renal dysfunction / Electrolyte imbalance",
+        "cn_name": "肾功能异常 / 电解质紊乱",
+        "evidence": "VHL 参与肾细胞癌发生; VHL 抑制可能影响肾小管功能",
+        "severity": "Moderate",
+        "mechanism": "HIF 通路改变 → 肾脏氧感知和代谢调节异常",
+        "monitoring": "肌酐/BUN/electrolytes 定期检测"
+      },
+      "iron_metabolism": {
+        "name": "Iron metabolism dysregulation / Anemia",
+        "cn_name": "铁代谢异常 / 贫血",
+        "evidence": "VHL-HIF-EPO轴调控红细胞生成",
+        "severity": "Moderate",
+        "mechanism": "HIF-2α 稳定化 → EPO 过表达或失调",
+        "monitoring": "CBC + iron studies"
+      }
+    },
+    "PROTAC-general": {
+      "hook_effect": {
+        "name": "Hook effect / Loss of efficacy at high dose",
+        "cn_name": "钩状效应 / 高浓度下失效",
+        "evidence": "PROTAC 双结合机制在高浓度时形成二元复合物而非三元复合物",
+        "severity": "Safety-relevant (dose escalation risk)",
+        "mechanism": "[Protac-Target] + [Protac-E3] > [Protac-Target-E3]",
+        "monitoring": "PK/PD 建模指导剂量选择"
+      },
+      "off_target_degradation": {
+        "name": "Off-target protein degradation",
+        "cn_name": "脱靶蛋白降解",
+        "evidence": "PROTAC 可能通过 E3 连接酶降解非预期靶点",
+        "severity": "Variable (depends on off-target)",
+        "mechanism": "Neosubstrate recruitment by E3 ligase",
+        "monitoring": "蛋白质组学筛选 + 广谱安全性监测"
+      },
+      "binary_complex_toxicity": {
+        "name": "Binary complex-mediated toxicity",
+        "cn_name": "二元复合物介导的毒性",
+        "evidence": "未形成三元复合物的游离 PROTAC-靶点 或 PROTAC-E3 复合物可能产生独立毒性",
+        "severity": "Unknown",
+        "mechanism": "游离 warhead 或 E3 ligand 的脱靶效应",
+        "monitoring": "与单独使用 warhead/E3-ligand 的安全性对比"
+      }
+    }
+  },
+  "hp518_integrated_risk_matrix": [
+    {
+      "source": "Fusion_Prediction",
+      "rank": 1,
+      "adr": "FATIGUE",
+      "score": 102.1,
+      "confidence": "High",
+      "validated": true,
+      "monitoring_priority": "P1"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 2,
+      "adr": "NAUSEA",
+      "score": 102.1,
+      "confidence": "High",
+      "validated": true,
+      "monitoring_priority": "P1"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 3,
+      "adr": "DECREASED APPETITE",
+      "score": 102.1,
+      "confidence": "High",
+      "validated": true,
+      "monitoring_priority": "P1"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 4,
+      "adr": "CONSTIPATION",
+      "score": 91.8,
+      "confidence": "High",
+      "validated": true,
+      "monitoring_priority": "P1"
+    },
+    {
+      "source": "PROTAC_CRBN-related",
+      "adr": "Teratogenicity / Embryo-fetal toxicity",
+      "cn_adr": "致畸性 / 胚胎-胎儿毒性",
+      "score": null,
+      "confidence": "Critical",
+      "mechanism": "CRBN-neosubstrate recruitment → SALL4/P63 degradation",
+      "evidence": "沙利度胺历史教训; CRBN 介导的 SALL4/IKZF1 降解",
+      "monitoring": "妊娠测试、严格避孕",
+      "monitoring_priority": "P1"
+    },
+    {
+      "source": "PROTAC_CRBN-related",
+      "adr": "Neutropenia",
+      "cn_adr": "中性粒细胞减少症",
+      "score": null,
+      "confidence": "High",
+      "mechanism": "IKZF1/Ikaros family degradation → hematopoietic disruption",
+      "evidence": "IMiD 类药物常见剂量限制性毒性; IKZF1/3 降解影响造血",
+      "monitoring": "定期 CBC 监测",
+      "monitoring_priority": "P1"
+    },
+    {
+      "source": "PROTAC_CRBN-related",
+      "adr": "Venous Thromboembolism (VTE/DVT/PE)",
+      "cn_adr": "静脉血栓栓塞",
+      "score": null,
+      "confidence": "High",
+      "mechanism": "多因素: TNFα变化、内皮细胞损伤、血小板激活",
+      "evidence": "来那度胺/泊马度胺黑框警告",
+      "monitoring": "VTE 风险评估、必要时预防性抗凝",
+      "monitoring_priority": "P1"
+    },
+    {
+      "source": "PROTAC_CRBN-related",
+      "adr": "Secondary Malignancies (SPM)",
+      "cn_adr": "第二原发恶性肿瘤",
+      "score": null,
+      "confidence": "High",
+      "mechanism": "免疫监视受损 + DNA损伤累积",
+      "evidence": "IMiD 长期使用增加 SPM 风险",
+      "monitoring": "长期随访、皮肤检查",
+      "monitoring_priority": "P1"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 5,
+      "adr": "ASTHENIA",
+      "score": 87.1,
+      "confidence": "High",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 6,
+      "adr": "HOT FLUSH",
+      "score": 87.1,
+      "confidence": "High",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 7,
+      "adr": "DIZZINESS",
+      "score": 87.1,
+      "confidence": "High",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 8,
+      "adr": "DIARRHOEA",
+      "score": 87.1,
+      "confidence": "High",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 9,
+      "adr": "ANAEMIA",
+      "score": 87.1,
+      "confidence": "High",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 10,
+      "adr": "VOMITING",
+      "score": 87.1,
+      "confidence": "High",
+      "validated": true,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 11,
+      "adr": "DYSPNOEA",
+      "score": 82.9,
+      "confidence": "High",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 12,
+      "adr": "BACK PAIN",
+      "score": 79.5,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 13,
+      "adr": "PNEUMONIA",
+      "score": 77.6,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 14,
+      "adr": "PAIN",
+      "score": 76.6,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 15,
+      "adr": "URINARY TRACT INFECTION",
+      "score": 74.8,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 16,
+      "adr": "HYPERTENSION",
+      "score": 74.3,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 17,
+      "adr": "WEIGHT DECREASED",
+      "score": 73.4,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 18,
+      "adr": "MALAISE",
+      "score": 71.8,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 19,
+      "adr": "HEADACHE",
+      "score": 71.4,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "PROTAC_VHL-related",
+      "adr": "Hypertension",
+      "cn_adr": "高血压",
+      "score": null,
+      "confidence": "Moderate",
+      "mechanism": "HIF-1α 稳定化 → 血管重构/水钠潴留",
+      "evidence": "VHL-HIF通路参与血压调节; VHL抑制剂可能影响",
+      "monitoring": "定期血压监测",
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "PROTAC_VHL-related",
+      "adr": "Renal dysfunction / Electrolyte imbalance",
+      "cn_adr": "肾功能异常 / 电解质紊乱",
+      "score": null,
+      "confidence": "Moderate",
+      "mechanism": "HIF 通路改变 → 肾脏氧感知和代谢调节异常",
+      "evidence": "VHL 参与肾细胞癌发生; VHL 抑制可能影响肾小管功能",
+      "monitoring": "肌酐/BUN/electrolytes 定期检测",
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "PROTAC_VHL-related",
+      "adr": "Iron metabolism dysregulation / Anemia",
+      "cn_adr": "铁代谢异常 / 贫血",
+      "score": null,
+      "confidence": "Moderate",
+      "mechanism": "HIF-2α 稳定化 → EPO 过表达或失调",
+      "evidence": "VHL-HIF-EPO轴调控红细胞生成",
+      "monitoring": "CBC + iron studies",
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "E3_FAE_CRBN(IMiD)",
+      "adr": "OFF LABEL USE",
+      "faers_count": 8352,
+      "status": "✓已在融合预测中",
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "E3_FAE_CRBN(IMiD)",
+      "adr": "PLASMA CELL MYELOMA",
+      "faers_count": 7324,
+      "status": "⚡新增PROTAC特异风险",
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "E3_FAE_CRBN(IMiD)",
+      "adr": "PNEUMONIA",
+      "faers_count": 5676,
+      "status": "✓已在融合预测中",
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "E3_FAE_CRBN(IMiD)",
+      "adr": "DIARRHOEA",
+      "faers_count": 5437,
+      "status": "✓已在融合预测中",
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "E3_FAE_CRBN(IMiD)",
+      "adr": "NEUTROPENIA",
+      "faers_count": 4938,
+      "status": "✓已在融合预测中",
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "E3_FAE_CRBN(IMiD)",
+      "adr": "FATIGUE",
+      "faers_count": 4820,
+      "status": "✓已在融合预测中",
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "E3_FAE_CRBN(IMiD)",
+      "adr": "DEATH",
+      "faers_count": 4615,
+      "status": "✓已在融合预测中",
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "E3_FAE_CRBN(IMiD)",
+      "adr": "THROMBOCYTOPENIA",
+      "faers_count": 3721,
+      "status": "✓已在融合预测中",
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "E3_FAE_CRBN(IMiD)",
+      "adr": "DRUG INEFFECTIVE",
+      "faers_count": 3616,
+      "status": "✓已在融合预测中",
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "E3_FAE_CRBN(IMiD)",
+      "adr": "ANAEMIA",
+      "faers_count": 3422,
+      "status": "✓已在融合预测中",
+      "monitoring_priority": "P2"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 20,
+      "adr": "MUSCULAR WEAKNESS",
+      "score": 66.2,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P3"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 21,
+      "adr": "ATRIAL FIBRILLATION",
+      "score": 65.7,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P3"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 22,
+      "adr": "RASH",
+      "score": 64.6,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P3"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 23,
+      "adr": "NEUROPATHY PERIPHERAL",
+      "score": 64.1,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P3"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 24,
+      "adr": "CEREBROVASCULAR ACCIDENT",
+      "score": 63.9,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P3"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 25,
+      "adr": "CONFUSIONAL STATE",
+      "score": 63.7,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P3"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 26,
+      "adr": "CHEST PAIN",
+      "score": 62.4,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P3"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 27,
+      "adr": "SEPSIS",
+      "score": 62.3,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P3"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 28,
+      "adr": "DEATH",
+      "score": 62.1,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P3"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 29,
+      "adr": "PROSTATIC SPECIFIC ANTIGEN INCREASED",
+      "score": 62.1,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P3"
+    },
+    {
+      "source": "Fusion_Prediction",
+      "rank": 30,
+      "adr": "MALIGNANT NEOPLASM PROGRESSION",
+      "score": 62.1,
+      "confidence": "Medium",
+      "validated": false,
+      "monitoring_priority": "P3"
+    },
+    {
+      "source": "PROTAC_PROTAC-general",
+      "adr": "Hook effect / Loss of efficacy at high dose",
+      "cn_adr": "钩状效应 / 高浓度下失效",
+      "score": null,
+      "confidence": "Safety-relevant (dose escalation risk)",
+      "mechanism": "[Protac-Target] + [Protac-E3] > [Protac-Target-E3]",
+      "evidence": "PROTAC 双结合机制在高浓度时形成二元复合物而非三元复合物",
+      "monitoring": "PK/PD 建模指导剂量选择",
+      "monitoring_priority": "P3"
+    },
+    {
+      "source": "PROTAC_PROTAC-general",
+      "adr": "Off-target protein degradation",
+      "cn_adr": "脱靶蛋白降解",
+      "score": null,
+      "confidence": "Variable (depends on off-target)",
+      "mechanism": "Neosubstrate recruitment by E3 ligase",
+      "evidence": "PROTAC 可能通过 E3 连接酶降解非预期靶点",
+      "monitoring": "蛋白质组学筛选 + 广谱安全性监测",
+      "monitoring_priority": "P3"
+    },
+    {
+      "source": "PROTAC_PROTAC-general",
+      "adr": "Binary complex-mediated toxicity",
+      "cn_adr": "二元复合物介导的毒性",
+      "score": null,
+      "confidence": "Unknown",
+      "mechanism": "游离 warhead 或 E3 ligand 的脱靶效应",
+      "evidence": "未形成三元复合物的游离 PROTAC-靶点 或 PROTAC-E3 复合物可能产生独立毒性",
+      "monitoring": "与单独使用 warhead/E3-ligand 的安全性对比",
+      "monitoring_priority": "P3"
+    }
+  ],
+  "key_recommendations": [
+    "HP518 若使用 VHL 配体：重点关注高血压、肾功能、贫血等 VHL-HIF 轴相关 AE",
+    "HP518 若使用 CRBN 配体：必须执行妊娠测试 + VTE 风险评估 + 定期 CBC",
+    "无论哪种 E3 配体：脱靶蛋白降解是最不可预测的风险，建议做蛋白质组学筛选",
+    "Hook effect 可能在高剂量下导致疗效丧失和意外毒性，需 PK/PD 建模支持",
+    "建议将本报告中 P1 项目纳入 Phase 2/3 的强制性安全性监测终点"
+  ]
+}

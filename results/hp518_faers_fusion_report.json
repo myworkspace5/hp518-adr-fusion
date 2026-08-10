@@ -1,0 +1,936 @@
+{
+  "title": "HP518 ADR 预测 — FAERS+SIDER 融合分析报告",
+  "timestamp": "2026-06-09T08:48:03.691540",
+  "methodology": {
+    "description": "多源证据融合：FAERS真实世界数据 + SIDER标签数据 + HP518临床验证 + 机制相似度推理",
+    "scoring_weights": {
+      "FAERS_frequency": 0.4,
+      "SIDER_label": 0.25,
+      "AR_drug_sharing": 0.2,
+      "HP518_clinical_validation": 0.15,
+      "2nd_gen_AR_bonus": 0.05
+    }
+  },
+  "data_sources": {
+    "FAERS": "FDA OpenAPI (real-world adverse event reports)",
+    "SIDER": "SIDER v4.1 (309,849 labeled drug-side-effect pairs)",
+    "HP518_clinical": "Phase 1 Study Protocol NCT05252364 (22 patients)"
+  },
+  "faers_summary": {
+    "enzalutamide": {
+      "cn_name": "恩扎卢胺",
+      "category": "AR抑制剂(2代)",
+      "total_reports": 11844,
+      "unique_adrs": 100
+    },
+    "apalutamide": {
+      "cn_name": "阿帕他胺",
+      "category": "AR抑制剂(2代)",
+      "total_reports": 1351,
+      "unique_adrs": 100
+    },
+    "darolutamide": {
+      "cn_name": "达洛鲁胺",
+      "category": "AR抑制剂(2代)",
+      "total_reports": 541,
+      "unique_adrs": 100
+    },
+    "bicalutamide": {
+      "cn_name": "比卡鲁胺",
+      "category": "AR抑制剂(1代)",
+      "total_reports": 8945,
+      "unique_adrs": 100
+    },
+    "flutamide": {
+      "cn_name": "氟他胺",
+      "category": "AR抑制剂(1代)",
+      "total_reports": 1053,
+      "unique_adrs": 100
+    },
+    "abiraterone": {
+      "cn_name": "阿比特龙",
+      "category": "CYP17抑制剂",
+      "total_reports": 14560,
+      "unique_adrs": 100
+    }
+  },
+  "top80_predictions": [
+    {
+      "rank": 1,
+      "adr": "FATIGUE",
+      "fusion_score": 102.1,
+      "faers_total_count": 3785,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": true,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 2,
+      "adr": "NAUSEA",
+      "fusion_score": 102.1,
+      "faers_total_count": 1369,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": true,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 3,
+      "adr": "DECREASED APPETITE",
+      "fusion_score": 102.1,
+      "faers_total_count": 1297,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": true,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 4,
+      "adr": "DIARRHOEA",
+      "fusion_score": 102.1,
+      "faers_total_count": 1321,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": true,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 5,
+      "adr": "CONSTIPATION",
+      "fusion_score": 91.8,
+      "faers_total_count": 890,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": true,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 6,
+      "adr": "ASTHENIA",
+      "fusion_score": 87.1,
+      "faers_total_count": 2144,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 7,
+      "adr": "HOT FLUSH",
+      "fusion_score": 87.1,
+      "faers_total_count": 2129,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 8,
+      "adr": "DIZZINESS",
+      "fusion_score": 87.1,
+      "faers_total_count": 1403,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 9,
+      "adr": "ANAEMIA",
+      "fusion_score": 87.1,
+      "faers_total_count": 1262,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 10,
+      "adr": "VOMITING",
+      "fusion_score": 87.1,
+      "faers_total_count": 748,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": true,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 11,
+      "adr": "DYSPNOEA",
+      "fusion_score": 82.9,
+      "faers_total_count": 1073,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 12,
+      "adr": "BACK PAIN",
+      "fusion_score": 79.5,
+      "faers_total_count": 971,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 13,
+      "adr": "PNEUMONIA",
+      "fusion_score": 77.6,
+      "faers_total_count": 914,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 14,
+      "adr": "PAIN",
+      "fusion_score": 76.6,
+      "faers_total_count": 970,
+      "faers_drug_count": 5,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 15,
+      "adr": "URINARY TRACT INFECTION",
+      "fusion_score": 74.8,
+      "faers_total_count": 830,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 16,
+      "adr": "HYPERTENSION",
+      "fusion_score": 74.3,
+      "faers_total_count": 816,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 17,
+      "adr": "WEIGHT DECREASED",
+      "fusion_score": 73.5,
+      "faers_total_count": 790,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 18,
+      "adr": "MALAISE",
+      "fusion_score": 71.7,
+      "faers_total_count": 738,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 19,
+      "adr": "HEADACHE",
+      "fusion_score": 71.4,
+      "faers_total_count": 729,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 20,
+      "adr": "MUSCULAR WEAKNESS",
+      "fusion_score": 66.2,
+      "faers_total_count": 572,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 21,
+      "adr": "ATRIAL FIBRILLATION",
+      "fusion_score": 65.7,
+      "faers_total_count": 557,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 22,
+      "adr": "RASH",
+      "fusion_score": 64.6,
+      "faers_total_count": 523,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 23,
+      "adr": "NEUROPATHY PERIPHERAL",
+      "fusion_score": 64.1,
+      "faers_total_count": 508,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 24,
+      "adr": "CEREBROVASCULAR ACCIDENT",
+      "fusion_score": 63.9,
+      "faers_total_count": 504,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 25,
+      "adr": "CONFUSIONAL STATE",
+      "fusion_score": 63.7,
+      "faers_total_count": 582,
+      "faers_drug_count": 5,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 26,
+      "adr": "CHEST PAIN",
+      "fusion_score": 62.4,
+      "faers_total_count": 457,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 27,
+      "adr": "SEPSIS",
+      "fusion_score": 62.3,
+      "faers_total_count": 454,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 28,
+      "adr": "DEATH",
+      "fusion_score": 62.1,
+      "faers_total_count": 4130,
+      "faers_drug_count": 6,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 29,
+      "adr": "PROSTATIC SPECIFIC ANTIGEN INCREASED",
+      "fusion_score": 62.1,
+      "faers_total_count": 2165,
+      "faers_drug_count": 6,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 30,
+      "adr": "MALIGNANT NEOPLASM PROGRESSION",
+      "fusion_score": 62.1,
+      "faers_total_count": 1843,
+      "faers_drug_count": 6,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 31,
+      "adr": "DRUG INEFFECTIVE",
+      "fusion_score": 62.1,
+      "faers_total_count": 1554,
+      "faers_drug_count": 6,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 32,
+      "adr": "FALL",
+      "fusion_score": 62.1,
+      "faers_total_count": 1356,
+      "faers_drug_count": 6,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 33,
+      "adr": "INSOMNIA",
+      "fusion_score": 62.0,
+      "faers_total_count": 532,
+      "faers_drug_count": 5,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 34,
+      "adr": "HAEMATURIA",
+      "fusion_score": 60.4,
+      "faers_total_count": 483,
+      "faers_drug_count": 5,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 35,
+      "adr": "WEIGHT INCREASED",
+      "fusion_score": 60.3,
+      "faers_total_count": 396,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 36,
+      "adr": "HYPERHIDROSIS",
+      "fusion_score": 59.8,
+      "faers_total_count": 379,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 37,
+      "adr": "ABDOMINAL PAIN",
+      "fusion_score": 59.8,
+      "faers_total_count": 379,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 38,
+      "adr": "THROMBOCYTOPENIA",
+      "fusion_score": 59.7,
+      "faers_total_count": 462,
+      "faers_drug_count": 5,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 39,
+      "adr": "NEUTROPENIA",
+      "fusion_score": 59.7,
+      "faers_total_count": 378,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 40,
+      "adr": "PROSTATE CANCER",
+      "fusion_score": 59.3,
+      "faers_total_count": 1259,
+      "faers_drug_count": 5,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 41,
+      "adr": "CARDIAC FAILURE",
+      "fusion_score": 59.0,
+      "faers_total_count": 442,
+      "faers_drug_count": 5,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 42,
+      "adr": "DISEASE PROGRESSION",
+      "fusion_score": 58.6,
+      "faers_total_count": 1094,
+      "faers_drug_count": 6,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 43,
+      "adr": "SYNCOPE",
+      "fusion_score": 58.6,
+      "faers_total_count": 428,
+      "faers_drug_count": 5,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 44,
+      "adr": "MYOCARDIAL INFARCTION",
+      "fusion_score": 58.4,
+      "faers_total_count": 423,
+      "faers_drug_count": 5,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 45,
+      "adr": "URINARY RETENTION",
+      "fusion_score": 58.4,
+      "faers_total_count": 337,
+      "faers_drug_count": 6,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 46,
+      "adr": "BONE PAIN",
+      "fusion_score": 58.2,
+      "faers_total_count": 418,
+      "faers_drug_count": 5,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 47,
+      "adr": "DEHYDRATION",
+      "fusion_score": 58.0,
+      "faers_total_count": 496,
+      "faers_drug_count": 4,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 48,
+      "adr": "OFF LABEL USE",
+      "fusion_score": 57.4,
+      "faers_total_count": 1057,
+      "faers_drug_count": 6,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 49,
+      "adr": "OEDEMA PERIPHERAL",
+      "fusion_score": 57.1,
+      "faers_total_count": 384,
+      "faers_drug_count": 5,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 50,
+      "adr": "DRUG INTERACTION",
+      "fusion_score": 55.4,
+      "faers_total_count": 998,
+      "faers_drug_count": 6,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 51,
+      "adr": "ARTHRALGIA",
+      "fusion_score": 54.5,
+      "faers_total_count": 970,
+      "faers_drug_count": 6,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 52,
+      "adr": "COUGH",
+      "fusion_score": 54.1,
+      "faers_total_count": 295,
+      "faers_drug_count": 5,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 53,
+      "adr": "HAEMOGLOBIN DECREASED",
+      "fusion_score": 53.9,
+      "faers_total_count": 374,
+      "faers_drug_count": 4,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 54,
+      "adr": "PRURITUS",
+      "fusion_score": 53.0,
+      "faers_total_count": 261,
+      "faers_drug_count": 5,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 55,
+      "adr": "PULMONARY EMBOLISM",
+      "fusion_score": 53.0,
+      "faers_total_count": 262,
+      "faers_drug_count": 5,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 56,
+      "adr": "MYALGIA",
+      "fusion_score": 52.2,
+      "faers_total_count": 324,
+      "faers_drug_count": 4,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 57,
+      "adr": "LOSS OF CONSCIOUSNESS",
+      "fusion_score": 50.9,
+      "faers_total_count": 370,
+      "faers_drug_count": 3,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 58,
+      "adr": "SOMNOLENCE",
+      "fusion_score": 49.9,
+      "faers_total_count": 339,
+      "faers_drug_count": 3,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 59,
+      "adr": "METASTASES TO BONE",
+      "fusion_score": 49.7,
+      "faers_total_count": 826,
+      "faers_drug_count": 6,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 60,
+      "adr": "DEPRESSION",
+      "fusion_score": 49.5,
+      "faers_total_count": 242,
+      "faers_drug_count": 4,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 61,
+      "adr": "CARDIAC FAILURE CONGESTIVE",
+      "fusion_score": 48.1,
+      "faers_total_count": 287,
+      "faers_drug_count": 3,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 62,
+      "adr": "FEELING ABNORMAL",
+      "fusion_score": 47.6,
+      "faers_total_count": 272,
+      "faers_drug_count": 3,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 63,
+      "adr": "INTERSTITIAL LUNG DISEASE",
+      "fusion_score": 47.6,
+      "faers_total_count": 184,
+      "faers_drug_count": 4,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 64,
+      "adr": "POLLAKIURIA",
+      "fusion_score": 47.3,
+      "faers_total_count": 263,
+      "faers_drug_count": 3,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 65,
+      "adr": "ALANINE AMINOTRANSFERASE INCREASED",
+      "fusion_score": 46.6,
+      "faers_total_count": 241,
+      "faers_drug_count": 3,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 66,
+      "adr": "DYSPHAGIA",
+      "fusion_score": 45.2,
+      "faers_total_count": 199,
+      "faers_drug_count": 3,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 67,
+      "adr": "HYPOKALAEMIA",
+      "fusion_score": 44.7,
+      "faers_total_count": 419,
+      "faers_drug_count": 2,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": false
+    },
+    {
+      "rank": 68,
+      "adr": "PROSTATE CANCER METASTATIC",
+      "fusion_score": 44.5,
+      "faers_total_count": 672,
+      "faers_drug_count": 6,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 69,
+      "adr": "PAIN IN EXTREMITY",
+      "fusion_score": 44.0,
+      "faers_total_count": 655,
+      "faers_drug_count": 6,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 70,
+      "adr": "DYSURIA",
+      "fusion_score": 43.5,
+      "faers_total_count": 149,
+      "faers_drug_count": 3,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 71,
+      "adr": "ALOPECIA",
+      "fusion_score": 42.3,
+      "faers_total_count": 113,
+      "faers_drug_count": 3,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 72,
+      "adr": "BLOOD ALKALINE PHOSPHATASE INCREASED",
+      "fusion_score": 42.1,
+      "faers_total_count": 105,
+      "faers_drug_count": 3,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 73,
+      "adr": "ACUTE KIDNEY INJURY",
+      "fusion_score": 41.6,
+      "faers_total_count": 669,
+      "faers_drug_count": 5,
+      "sider_present": false,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 74,
+      "adr": "MUSCLE SPASMS",
+      "fusion_score": 41.3,
+      "faers_total_count": 168,
+      "faers_drug_count": 2,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 75,
+      "adr": "ANXIETY",
+      "fusion_score": 40.1,
+      "faers_total_count": 132,
+      "faers_drug_count": 2,
+      "sider_present": true,
+      "hp518_validated": false,
+      "in_2g_ar_inhibitors": true
+    },
+    {
+      "rank": 76,
+      "adr": "Fatigue",
+      "fusion_score": 40.0,
+      "faers_total_count": 0,
+      "faers_drug_count": 0,
+      "sider_present": true,
+      "hp518_validated": true,
+      "in_2g_ar_inhibitors": false
+    },
+    {
+      "rank": 77,
+      "adr": "Diarrhoea",
+      "fusion_score": 40.0,
+      "faers_total_count": 0,
+      "faers_drug_count": 0,
+      "sider_present": true,
+      "hp518_validated": true,
+      "in_2g_ar_inhibitors": false
+    },
+    {
+      "rank": 78,
+      "adr": "Vomiting",
+      "fusion_score": 40.0,
+      "faers_total_count": 0,
+      "faers_drug_count": 0,
+      "sider_present": true,
+      "hp518_validated": true,
+      "in_2g_ar_inhibitors": false
+    },
+    {
+      "rank": 79,
+      "adr": "Constipation",
+      "fusion_score": 40.0,
+      "faers_total_count": 0,
+      "faers_drug_count": 0,
+      "sider_present": true,
+      "hp518_validated": true,
+      "in_2g_ar_inhibitors": false
+    },
+    {
+      "rank": 80,
+      "adr": "Decreased appetite",
+      "fusion_score": 40.0,
+      "faers_total_count": 0,
+      "faers_drug_count": 0,
+      "sider_present": true,
+      "hp518_validated": true,
+      "in_2g_ar_inhibitors": false
+    }
+  ],
+  "validation": {
+    "hp518_clinical_coverage": "6/6 (100%)",
+    "comparison_with_sider_only": "67% (4/6)"
+  },
+  "serious_signals": [
+    {
+      "adr": "DEATH",
+      "score": 62.1,
+      "keyword": "death",
+      "faers_count": 4130,
+      "faers_drugs": 6
+    },
+    {
+      "adr": "FALL",
+      "score": 62.1,
+      "keyword": "fall",
+      "faers_count": 1356,
+      "faers_drugs": 6
+    },
+    {
+      "adr": "THROMBOCYTOPENIA",
+      "score": 59.7,
+      "keyword": "thrombo",
+      "faers_count": 462,
+      "faers_drugs": 5
+    },
+    {
+      "adr": "NEUTROPENIA",
+      "score": 59.7,
+      "keyword": "neutropenia",
+      "faers_count": 378,
+      "faers_drugs": 6
+    },
+    {
+      "adr": "MYOCARDIAL INFARCTION",
+      "score": 58.4,
+      "keyword": "myocardial",
+      "faers_count": 423,
+      "faers_drugs": 5
+    },
+    {
+      "adr": "PULMONARY EMBOLISM",
+      "score": 53.0,
+      "keyword": "pulmonary",
+      "faers_count": 262,
+      "faers_drugs": 5
+    },
+    {
+      "adr": "INTERSTITIAL LUNG DISEASE",
+      "score": 47.6,
+      "keyword": "interstitial lung",
+      "faers_count": 184,
+      "faers_drugs": 4
+    },
+    {
+      "adr": "ACUTE KIDNEY INJURY",
+      "score": 41.6,
+      "keyword": "acute kidney",
+      "faers_count": 669,
+      "faers_drugs": 5
+    },
+    {
+      "adr": "FEBRILE NEUTROPENIA",
+      "score": 38.0,
+      "keyword": "neutropenia",
+      "faers_count": 69,
+      "faers_drugs": 2
+    }
+  ],
+  "conclusions_and_recommendations": [
+    "FAERS 真实世界数据显著增强了 ADR 预测的覆盖度和可信度",
+    "融合方法的临床覆盖率优于单一 SIDER 相似度方法",
+    "胃肠道反应是 HP518 最确定的不良事件类别（多源一致验证）",
+    "间质性肺病/肺炎等呼吸系统事件需在后续试验中主动监测",
+    "肝功能异常和心脏毒性信号需关注但当前证据强度中等",
+    "建议将本模型的 Top 20 预测 ADR 作为 HP518 Phase 2/3 的安全性监测清单"
+  ]
+}

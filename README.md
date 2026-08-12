@@ -14,7 +14,8 @@ hp518-adr-fusion/
 │   ├── adr_prediction_no_structure.py # Full pipeline entry point
 │   ├── expanded_drug_analysis.py      # Extended analysis across AR-PROTAC drug class
 │   ├── analyze_sider_data.py          # SIDER database processing
-│   └── download_sider.py              # SIDER data download utility
+│   ├── download_sider.py              # SIDER data download utility
+│   └── disproportionality_analysis.py # ROR disproportionality analysis (9 serious safety signals, internal comparator)
 ├── data/
 │   ├── ar_prostate_cancer_faers_data.json   # Processed FAERS data (AR prostate cancer drug reports)
 │   ├── drug_names.tsv                 # Drug name mapping (SIDER)
@@ -23,7 +24,8 @@ hp518-adr-fusion/
     ├── hp518_faers_fusion_report.json       # Final fusion scores for all candidate ADRs
     ├── hp518_expanded_drug_fusion_report.json
     ├── hp518_protac_risk_model.json         # PROTAC mechanism-specific risk model
-    └── baseline_model_results.json          # Baseline ML model performance metrics
+    ├── baseline_model_results.json          # Baseline ML model performance metrics
+    └── disproportionality_results.json      # ROR results (9 signals × 6 drugs, 2×2 contingency tables)
 ```
 
 ## Requirements
@@ -44,7 +46,8 @@ FAERS reports are retrieved via the **FDA OpenFDA API** (`faers_fusion_analysis.
 Reports for enzalutamide, apalutamide, darolutamide, and other AR drugs are collected and deduplicated.
 
 ### Part 2 — Evidence Fusion & Scoring
-- **FAERS signal mining**: disproportionality analysis (ROR, PRR) at the MedDRA PT level
+- **FAERS signal mining**: disproportionality analysis (ROR) at the MedDRA PT level
+  - ROR is computed with an **internal comparator design** (the remaining five AR pathway inhibitors as background) from 2×2 contingency tables; signals are flagged when the ROR 95% CI lower bound > 1. PRR is not applicable in this design because comparator drugs share similar ADR profiles (see `disproportionality_analysis.py` and `results/disproportionality_results.json`).
 - **SIDER integration**: approved indications and adverse event frequencies from SIDER 4.1
 - **Cross-database validation**: matching against clinical trial records
 - **Severity classification**: PT-based severity tiers (critical / serious / non-serious)
@@ -82,6 +85,9 @@ python code/generate_figures.py
 
 # Step 4: Run baseline ML models
 python code/build_baseline_model.py
+
+# Step 5: Run ROR disproportionality analysis (9 serious safety signals)
+python code/disproportionality_analysis.py
 ```
 
 Or run individual parts:
@@ -102,6 +108,7 @@ python code/generate_figures.py          # Part 4: Visualization
 | `results/hp518_faers_fusion_report.json` | Final ADR fusion scores (top candidates ranked) | 24 KB |
 | `results/hp518_protac_risk_model.json` | PROTAC mechanism-specific risk model | 20 KB |
 | `results/baseline_model_results.json` | Baseline ML performance metrics | 3 KB |
+| `results/disproportionality_results.json` | ROR disproportionality results (9 signals × 6 drugs) | 15 KB |
 
 ## Notes
 

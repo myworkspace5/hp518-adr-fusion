@@ -6,15 +6,16 @@ AR-PROTAC ADR 预测模型 - 基线模型构建
 import csv
 import json
 import sys
+import os
 from collections import defaultdict, Counter
 sys.stdout.reconfigure(encoding='utf-8')
 
 print("=== AR-PROTAC ADR 预测 - 基线模型构建 ===")
 print()
 
-workspace = r"C:\Users\Bazinga\.qclaw\workspace\arptpred"
-sider_file = workspace + r"\data\sider\meddra_all_se.tsv"
-drug_name_file = workspace + r"\data\sider\drug_names.tsv"
+import paths as _paths
+sider_file = _paths.SIDER_MEDDRA_TSV
+drug_name_file = _paths.SIDER_DRUG_NAMES_TSV
 
 # ============================================================
 # Step 1: 加载数据
@@ -181,7 +182,7 @@ for test_id, test_name in test_drugs[:3]:
         "predictions": [{"se": se, "score": score} for se, score in predictions]
     })
 
-output_file = workspace + r"\results\baseline_model_results.json"
+output_file = os.path.join(_paths.RESULTS_DIR, "baseline_model_results.json")
 with open(output_file, 'w', encoding='utf-8') as f:
     json.dump(output, f, ensure_ascii=False, indent=2)
 

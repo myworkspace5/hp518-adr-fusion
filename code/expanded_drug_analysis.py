@@ -14,8 +14,8 @@ from collections import Counter
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-workspace = r"C:\Users\Bazinga\.qclaw\workspace\arptpred"
-output_dir = os.path.join(workspace, "results")
+import paths as _paths
+output_dir = _paths.RESULTS_DIR
 os.makedirs(output_dir, exist_ok=True)
 
 ssl_ctx = ssl.create_default_context()

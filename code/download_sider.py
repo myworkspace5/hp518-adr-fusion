@@ -8,7 +8,8 @@ print()
 
 # SIDER URL
 sider_url = "http://sideeffects.embl.de/media/download/meddra_all_se.tsv.gz"
-out_file = r"C:\Users\Bazinga\.qclaw\workspace\arptpred\data\sider\meddra_all_se.tsv.gz"
+import paths as _paths
+out_file = _paths.SIDER_MEDDRA_TSV + ".gz"
 
 print("正在下载: " + sider_url)
 print("保存到: " + out_file)
@@ -53,7 +54,7 @@ print()
 
 # Download drug_names.tsv
 drug_url = "http://sideeffects.embl.de/media/download/drug_names.tsv"
-drug_file = r"C:\Users\Bazinga\.qclaw\workspace\arptpred\data\sider\drug_names.tsv"
+drug_file = _paths.SIDER_DRUG_NAMES_TSV
 
 print("正在下载药物名称映射...")
 try:

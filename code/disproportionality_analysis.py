@@ -19,7 +19,8 @@ sys.stdout.reconfigure(encoding='utf-8')
 # ============================================================
 # 1. 加载数据
 # ============================================================
-FAERS_PATH = r"F:\2025-2026-2科研\HP518 ADR\Figures&Supplementary Files\hp518-adr-fusion\data\ar_prostate_cancer_faers_data.json"
+import paths as _paths
+FAERS_PATH = _paths.FAERS_PROSTATE_CANCER_JSON
 
 with open(FAERS_PATH, 'r', encoding='utf-8') as f:
     raw = json.load(f)
@@ -340,7 +341,7 @@ print(f"\n  结论: {sig_both} 个信号同时满足 ROR 和 PRR 显著性标准
 # ============================================================
 # 6. 保存结果 JSON
 # ============================================================
-OUT_PATH = r"F:\2025-2026-2科研\HP518 ADR\Figures&Supplementary Files\hp518-adr-fusion\results\disproportionality_results.json"
+OUT_PATH = os.path.join(_paths.RESULTS_DIR, "disproportionality_results.json")
 out = {
     'metadata': {
         'data_source': str(FAERS_PATH),

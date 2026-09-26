@@ -15,10 +15,10 @@ print("AR-PROTAC ADR 预测 - 免费数据方案")
 print("=" * 60)
 print()
 
-workspace = r"C:\Users\Bazinga\.qclaw\workspace\arptpred"
-sider_file = os.path.join(workspace, "data", "sider", "meddra_all_se.tsv")
-drug_name_file = os.path.join(workspace, "data", "sider", "drug_names.tsv")
-output_dir = os.path.join(workspace, "results")
+import paths as _paths
+sider_file = _paths.SIDER_MEDDRA_TSV
+drug_name_file = _paths.SIDER_DRUG_NAMES_TSV
+output_dir = _paths.RESULTS_DIR
 os.makedirs(output_dir, exist_ok=True)
 
 # ============================================================

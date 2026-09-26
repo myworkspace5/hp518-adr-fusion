@@ -14,8 +14,8 @@ from collections import Counter
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-workspace = r"C:\Users\Bazinga\.qclaw\workspace\arptpred"
-output_dir = os.path.join(workspace, "results")
+import paths as _paths
+output_dir = _paths.RESULTS_DIR
 fig_dir = os.path.join(output_dir, "figures")
 os.makedirs(fig_dir, exist_ok=True)
 
@@ -28,7 +28,7 @@ fusion_path = os.path.join(output_dir, "hp518_faers_fusion_report.json")
 with open(fusion_path, 'r', encoding='utf-8') as f:
     fusion_data = json.load(f)
 
-faers_raw_path = os.path.join(workspace, "data", "faers", "ar_prostate_cancer_faers_data.json")
+faers_raw_path = _paths.FAERS_PROSTATE_CANCER_JSON
 with open(faers_raw_path, 'r', encoding='utf-8') as f:
     faers_raw = json.load(f)
 

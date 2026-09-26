@@ -6,7 +6,8 @@ sys.stdout.reconfigure(encoding='utf-8')
 print("=== SIDER 数据分析：抗前列腺癌药物 ADR 探索 ===")
 print()
 
-sider_file = r"C:\Users\Bazinga\.qclaw\workspace\arptpred\data\sider\meddra_all_se.tsv"
+import paths as _paths
+sider_file = _paths.SIDER_MEDDRA_TSV
 
 # SIDER 格式（无表头，6列）：
 # 列1: DrugBank ID (CID100...)
@@ -22,6 +23,11 @@ print()
 drug_side_effects = {}
 drug_names = {}
 side_effect_counts = {}
+# Distinct side-effect concepts are counted by UMLS concept identifier
+# (column 2), not by free-text name. The name-based count is larger (6,123)
+# because the same concept appears under several spellings; the concept count
+# (5,868) is the figure quoted in the manuscript.
+side_effect_cuis = set()
 
 total_rows = 0
 with open(sider_file, 'r', encoding='utf-8') as f:
@@ -41,11 +47,13 @@ with open(sider_file, 'r', encoding='utf-8') as f:
             if side_effect not in side_effect_counts:
                 side_effect_counts[side_effect] = 0
             side_effect_counts[side_effect] += 1
+            side_effect_cuis.add(row[2])
 
 print(f"数据读取完成！")
 print(f"  总记录数: {total_rows:,}")
 print(f"  唯一药物数: {len(drug_side_effects):,}")
-print(f"  唯一副作用数: {len(side_effect_counts):,}")
+print(f"  唯一副作用概念数 (UMLS CUI): {len(side_effect_cuis):,}")
+print(f"  唯一副作用名称数 (原文字符串): {len(side_effect_counts):,}")
 print()
 
 # 查找抗前列腺癌相关药物
@@ -61,7 +69,7 @@ target_drugs = [
 ]
 
 # 先读取药物名称映射表
-drug_name_file = r"C:\Users\Bazinga\.qclaw\workspace\arptpred\data\sider\drug_names.tsv"
+drug_name_file = _paths.SIDER_DRUG_NAMES_TSV
 drug_name_map = {}
 try:
     with open(drug_name_file, 'r', encoding='utf-8') as f:

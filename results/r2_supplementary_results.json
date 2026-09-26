@@ -1,0 +1,910 @@
+{
+ "provenance": {
+  "faers_window": "receivedate:[20040101+TO+20260401]",
+  "faers_fetched_at": "2026-09-22T10:10:39",
+  "faers_db_total": 20344365,
+  "faers_pooled_total": 35423,
+  "n_reference_drugs": 6,
+  "sider_term_universe": 276,
+  "sider_database": {
+   "pairs": 309849,
+   "drugs": 1430,
+   "adverse_effect_concepts": 5868,
+   "concept_definition": "distinct UMLS concept identifiers (column 2 of meddra_all_se.tsv)"
+  },
+  "normalisation_range": [
+   4.0,
+   899.7
+  ],
+  "seed": 20260922,
+  "python": "3.9.13",
+  "numpy": "1.26.4",
+  "scikit_learn": "1.6.1"
+ },
+ "S1_scenarios": {
+  "n_candidates": 202,
+  "weights": {
+   "scenario_a": {
+    "raw": {
+     "F": 0.4,
+     "I": 0.25,
+     "C": 0.2,
+     "V": 0.15,
+     "B": 0.05
+    },
+    "sum": 1.05,
+    "scale": "0-105",
+    "normalised": {
+     "F": 0.381,
+     "I": 0.2381,
+     "C": 0.1905,
+     "V": 0.1429,
+     "B": 0.0476
+    }
+   },
+   "scenario_b": {
+    "raw": {
+     "F": 0.45,
+     "I": 0.25,
+     "C": 0.25,
+     "V": 0.0,
+     "B": 0.05
+    },
+    "sum": 1.0,
+    "scale": "0-100",
+    "normalised": {
+     "F": 0.45,
+     "I": 0.25,
+     "C": 0.25,
+     "V": 0.0,
+     "B": 0.05
+    }
+   },
+   "note": "Scenario A and B are on different absolute scales; compare by rank only."
+  },
+  "scenario_a": {
+   "coverage": {
+    "5": 5,
+    "10": 6,
+    "20": 6,
+    "80": 6
+   },
+   "hits_top10": [
+    "FATIGUE",
+    "NAUSEA",
+    "VOMITING",
+    "DECREASED APPETITE",
+    "CONSTIPATION",
+    "DIARRHOEA"
+   ],
+   "top10": [
+    "DECREASED APPETITE",
+    "DIARRHOEA",
+    "FATIGUE",
+    "NAUSEA",
+    "CONSTIPATION",
+    "VOMITING",
+    "ANAEMIA",
+    "ASTHENIA",
+    "BACK PAIN",
+    "DIZZINESS"
+   ]
+  },
+  "scenario_b": {
+   "coverage": {
+    "5": 3,
+    "10": 4,
+    "20": 6,
+    "80": 6
+   },
+   "hits_top10": [
+    "FATIGUE",
+    "NAUSEA",
+    "DECREASED APPETITE",
+    "DIARRHOEA"
+   ],
+   "hits_top20": [
+    "FATIGUE",
+    "NAUSEA",
+    "VOMITING",
+    "DECREASED APPETITE",
+    "CONSTIPATION",
+    "DIARRHOEA"
+   ],
+   "top10": [
+    "ANAEMIA",
+    "ASTHENIA",
+    "BACK PAIN",
+    "DECREASED APPETITE",
+    "DIARRHOEA",
+    "DIZZINESS",
+    "DYSPNOEA",
+    "FATIGUE",
+    "HOT FLUSH",
+    "NAUSEA"
+   ]
+  },
+  "spearman_a_vs_b": 0.997,
+  "misprint_check": {
+   "weights": {
+    "F": 0.38,
+    "I": 0.22,
+    "C": 0.2,
+    "V": 0.15,
+    "B": 0.05
+   },
+   "top10_set_identical": true,
+   "coverage_top10_a": 6,
+   "coverage_top10_misprint": 6,
+   "spearman_a_vs_misprint": 0.9979,
+   "note": "The 0.38/0.22 pair was a transcription error; it changes no reported result."
+  }
+ },
+ "S2_cutoff_sensitivity": {
+  "25": {
+   "n_pool": 52,
+   "min_count_at_cut": 15,
+   "coverage": {
+    "5": 4,
+    "10": 5,
+    "20": 5,
+    "80": 6
+   },
+   "missing_at_top10": [
+    "VOMITING"
+   ],
+   "spearman_vs_100": 0.88,
+   "jaccard_top30": 0.5
+  },
+  "50": {
+   "n_pool": 101,
+   "min_count_at_cut": 9,
+   "coverage": {
+    "5": 5,
+    "10": 6,
+    "20": 6,
+    "80": 6
+   },
+   "missing_at_top10": [],
+   "spearman_vs_100": 0.914,
+   "jaccard_top30": 0.538
+  },
+  "75": {
+   "n_pool": 148,
+   "min_count_at_cut": 7,
+   "coverage": {
+    "5": 5,
+    "10": 6,
+    "20": 6,
+    "80": 6
+   },
+   "missing_at_top10": [],
+   "spearman_vs_100": 0.973,
+   "jaccard_top30": 0.765
+  },
+  "100": {
+   "n_pool": 202,
+   "min_count_at_cut": 5,
+   "coverage": {
+    "5": 5,
+    "10": 6,
+    "20": 6,
+    "80": 6
+   },
+   "missing_at_top10": [],
+   "spearman_vs_100": null,
+   "jaccard_top30": null
+  },
+  "150": {
+   "n_pool": 334,
+   "min_count_at_cut": 3,
+   "coverage": {
+    "5": 5,
+    "10": 6,
+    "20": 6,
+    "80": 6
+   },
+   "missing_at_top10": [],
+   "spearman_vs_100": 0.975,
+   "jaccard_top30": 0.875
+  },
+  "200": {
+   "n_pool": 434,
+   "min_count_at_cut": 3,
+   "coverage": {
+    "5": 5,
+    "10": 6,
+    "20": 6,
+    "80": 6
+   },
+   "missing_at_top10": [],
+   "spearman_vs_100": 0.962,
+   "jaccard_top30": 0.875
+  }
+ },
+ "S3_pt_stability": {
+  "INTERSTITIAL LUNG DISEASE": {
+   "in_top25": true,
+   "in_top100": true,
+   "pooled_reports": 184,
+   "n_drugs": 4
+  },
+  "MYOCARDIAL INFARCTION": {
+   "in_top25": false,
+   "in_top100": true,
+   "pooled_reports": 422,
+   "n_drugs": 5
+  },
+  "PULMONARY EMBOLISM": {
+   "in_top25": false,
+   "in_top100": true,
+   "pooled_reports": 262,
+   "n_drugs": 5
+  },
+  "NEUTROPENIA": {
+   "in_top25": true,
+   "in_top100": true,
+   "pooled_reports": 379,
+   "n_drugs": 6
+  },
+  "THROMBOCYTOPENIA": {
+   "in_top25": false,
+   "in_top100": true,
+   "pooled_reports": 463,
+   "n_drugs": 5
+  },
+  "CEREBROVASCULAR ACCIDENT": {
+   "in_top25": false,
+   "in_top100": true,
+   "pooled_reports": 504,
+   "n_drugs": 6
+  },
+  "CARDIAC FAILURE": {
+   "in_top25": true,
+   "in_top100": true,
+   "pooled_reports": 442,
+   "n_drugs": 5
+  },
+  "ACUTE KIDNEY INJURY": {
+   "in_top25": true,
+   "in_top100": true,
+   "pooled_reports": 670,
+   "n_drugs": 5
+  },
+  "ATRIAL FIBRILLATION": {
+   "in_top25": false,
+   "in_top100": true,
+   "pooled_reports": 552,
+   "n_drugs": 5
+  },
+  "DEATH": {
+   "in_top25": true,
+   "in_top100": true,
+   "pooled_reports": 4133,
+   "n_drugs": 6
+  },
+  "SEPSIS": {
+   "in_top25": false,
+   "in_top100": true,
+   "pooled_reports": 454,
+   "n_drugs": 6
+  },
+  "HYPERTENSION": {
+   "in_top25": true,
+   "in_top100": true,
+   "pooled_reports": 818,
+   "n_drugs": 6
+  },
+  "DYSPNOEA": {
+   "in_top25": true,
+   "in_top100": true,
+   "pooled_reports": 1074,
+   "n_drugs": 6
+  },
+  "ANAEMIA": {
+   "in_top25": true,
+   "in_top100": true,
+   "pooled_reports": 1263,
+   "n_drugs": 6
+  },
+  "HEPATIC FAILURE": {
+   "in_top25": false,
+   "in_top100": true,
+   "pooled_reports": 12,
+   "n_drugs": 1
+  },
+  "HAEMATURIA": {
+   "in_top25": false,
+   "in_top100": true,
+   "pooled_reports": 482,
+   "n_drugs": 5
+  },
+  "FALL": {
+   "in_top25": true,
+   "in_top100": true,
+   "pooled_reports": 1357,
+   "n_drugs": 6
+  },
+  "DEHYDRATION": {
+   "in_top25": false,
+   "in_top100": true,
+   "pooled_reports": 497,
+   "n_drugs": 4
+  },
+  "SYNCOPE": {
+   "in_top25": false,
+   "in_top100": true,
+   "pooled_reports": 429,
+   "n_drugs": 5
+  }
+ },
+ "S4_leave_one_drug_out": {
+  "enzalutamide": {
+   "n_pool": 190,
+   "coverage": {
+    "5": 2,
+    "10": 4,
+    "20": 6
+   },
+   "top10": [
+    "ASTHENIA",
+    "FATIGUE",
+    "HOT FLUSH",
+    "DIARRHOEA",
+    "ANAEMIA",
+    "NAUSEA",
+    "DIZZINESS",
+    "DYSPNOEA",
+    "PNEUMONIA",
+    "DECREASED APPETITE"
+   ]
+  },
+  "apalutamide": {
+   "n_pool": 187,
+   "coverage": {
+    "5": 3,
+    "10": 4,
+    "20": 6
+   },
+   "top10": [
+    "ANAEMIA",
+    "ASTHENIA",
+    "BACK PAIN",
+    "DECREASED APPETITE",
+    "DIARRHOEA",
+    "DIZZINESS",
+    "DYSPNOEA",
+    "FATIGUE",
+    "HOT FLUSH",
+    "NAUSEA"
+   ]
+  },
+  "darolutamide": {
+   "n_pool": 181,
+   "coverage": {
+    "5": 3,
+    "10": 4,
+    "20": 6
+   },
+   "top10": [
+    "ANAEMIA",
+    "ASTHENIA",
+    "BACK PAIN",
+    "DECREASED APPETITE",
+    "DIARRHOEA",
+    "DIZZINESS",
+    "DYSPNOEA",
+    "FATIGUE",
+    "HOT FLUSH",
+    "NAUSEA"
+   ]
+  },
+  "bicalutamide": {
+   "n_pool": 198,
+   "coverage": {
+    "5": 3,
+    "10": 4,
+    "20": 6
+   },
+   "top10": [
+    "ANAEMIA",
+    "ASTHENIA",
+    "DECREASED APPETITE",
+    "DIARRHOEA",
+    "DIZZINESS",
+    "FATIGUE",
+    "HOT FLUSH",
+    "NAUSEA",
+    "BACK PAIN",
+    "DYSPNOEA"
+   ]
+  },
+  "flutamide": {
+   "n_pool": 183,
+   "coverage": {
+    "5": 3,
+    "10": 4,
+    "20": 6
+   },
+   "top10": [
+    "ANAEMIA",
+    "ASTHENIA",
+    "BACK PAIN",
+    "DECREASED APPETITE",
+    "DIARRHOEA",
+    "DIZZINESS",
+    "DYSPNOEA",
+    "FATIGUE",
+    "HOT FLUSH",
+    "NAUSEA"
+   ]
+  },
+  "abiraterone": {
+   "n_pool": 193,
+   "coverage": {
+    "5": 2,
+    "10": 4,
+    "20": 6
+   },
+   "top10": [
+    "ASTHENIA",
+    "DECREASED APPETITE",
+    "DIZZINESS",
+    "FATIGUE",
+    "HOT FLUSH",
+    "NAUSEA",
+    "DIARRHOEA",
+    "ANAEMIA",
+    "DYSPNOEA",
+    "BACK PAIN"
+   ]
+  }
+ },
+ "S5_ml_baselines": {
+  "n": 202,
+  "positives": 6,
+  "features": [
+   "min-max normalised pooled FAERS report count (F)",
+   "binary SIDER label presence (I)",
+   "number of reference drugs reporting the ADR (C)",
+   "second-generation AR-inhibitor indicator (B)"
+  ],
+  "label": "1 if the ADR was observed in the Phase 1 HP518 dataset (V > 0)",
+  "protocol": "20 repeats x stratified 5-fold CV; 2000 bootstrap resamples for CIs",
+  "results": {
+   "Logistic Regression (L2)": {
+    "AUROC": 0.964,
+    "AUROC_CI": [
+     0.958,
+     0.969
+    ],
+    "AUPR": 0.311,
+    "AUPR_CI": [
+     0.283,
+     0.349
+    ],
+    "coverage_top10_mean": 3.25,
+    "boot_AUROC_CI": [
+     0.924,
+     0.98
+    ],
+    "boot_AUPR_CI": [
+     0.129,
+     0.543
+    ]
+   },
+   "Multinomial Naive Bayes": {
+    "AUROC": 0.94,
+    "AUROC_CI": [
+     0.93,
+     0.955
+    ],
+    "AUPR": 0.236,
+    "AUPR_CI": [
+     0.198,
+     0.321
+    ],
+    "coverage_top10_mean": 2.35,
+    "boot_AUROC_CI": [
+     0.901,
+     0.984
+    ],
+    "boot_AUPR_CI": [
+     0.116,
+     0.631
+    ]
+   },
+   "Fusion model (Scenario B)": {
+    "AUROC": 0.97,
+    "AUPR": 0.345,
+    "coverage_top10_mean": 4,
+    "boot_AUROC_CI": [
+     0.943,
+     0.989
+    ],
+    "boot_AUPR_CI": [
+     0.142,
+     0.636
+    ],
+    "note": "Deterministic score: no cross-validation spread; bootstrap CI only. Point estimates rank above both baselines but the intervals overlap, so superiority over machine learning is NOT claimed."
+   }
+  }
+ },
+ "S6_weight_sensitivity": {
+  "random": {
+   "n": 5000,
+   "sampling": "normalised exponential (Dirichlet-like) draws",
+   "coverage_top10_mean": 5.847,
+   "coverage_top10_min": 4,
+   "coverage_top10_max": 6,
+   "prop_coverage_6": 0.855,
+   "spearman_mean": 0.9406,
+   "spearman_min": 0.8596,
+   "jaccard_top30_mean": 0.7198,
+   "jaccard_top30_min": 0.4634
+  },
+  "one_at_a_time": {
+   "F-20%": {
+    "coverage_top10": 4,
+    "spearman": 0.999
+   },
+   "F-10%": {
+    "coverage_top10": 4,
+    "spearman": 0.999
+   },
+   "F+10%": {
+    "coverage_top10": 4,
+    "spearman": 0.996
+   },
+   "F+20%": {
+    "coverage_top10": 4,
+    "spearman": 0.994
+   },
+   "I-20%": {
+    "coverage_top10": 4,
+    "spearman": 0.993
+   },
+   "I-10%": {
+    "coverage_top10": 4,
+    "spearman": 0.995
+   },
+   "I+10%": {
+    "coverage_top10": 4,
+    "spearman": 0.999
+   },
+   "I+20%": {
+    "coverage_top10": 4,
+    "spearman": 0.999
+   },
+   "C-20%": {
+    "coverage_top10": 4,
+    "spearman": 0.998
+   },
+   "C-10%": {
+    "coverage_top10": 4,
+    "spearman": 0.997
+   },
+   "C+10%": {
+    "coverage_top10": 4,
+    "spearman": 0.997
+   },
+   "C+20%": {
+    "coverage_top10": 4,
+    "spearman": 0.996
+   },
+   "V-20%": {
+    "coverage_top10": 4,
+    "spearman": 0.997
+   },
+   "V-10%": {
+    "coverage_top10": 4,
+    "spearman": 0.997
+   },
+   "V+10%": {
+    "coverage_top10": 4,
+    "spearman": 0.997
+   },
+   "V+20%": {
+    "coverage_top10": 4,
+    "spearman": 0.997
+   },
+   "B-20%": {
+    "coverage_top10": 4,
+    "spearman": 0.997
+   },
+   "B-10%": {
+    "coverage_top10": 4,
+    "spearman": 0.997
+   },
+   "B+10%": {
+    "coverage_top10": 4,
+    "spearman": 0.997
+   },
+   "B+20%": {
+    "coverage_top10": 4,
+    "spearman": 0.997
+   }
+  }
+ },
+ "S7_disproportionality": {
+  "background": {
+   "db_total": 20344365,
+   "exposed": 35423,
+   "n_tested": 18,
+   "date_window": "receivedate:[20040101+TO+20260401]",
+   "design": "whole-database background (conventional)"
+  },
+  "table": {
+   "HAEMATURIA": {
+    "a": 425,
+    "b": 34998,
+    "c": 33340,
+    "d": 20275602,
+    "ROR": 7.385,
+    "ROR_CI": [
+     6.707,
+     8.131
+    ],
+    "PRR": 7.308,
+    "chi2": 2288.9,
+    "signal": true,
+    "q_BH": 0.0
+   },
+   "ATRIAL FIBRILLATION": {
+    "a": 490,
+    "b": 34933,
+    "c": 94450,
+    "d": 20214492,
+    "ROR": 3.002,
+    "ROR_CI": [
+     2.745,
+     3.283
+    ],
+    "PRR": 2.974,
+    "chi2": 641.9,
+    "signal": true,
+    "q_BH": 0.0
+   },
+   "DEATH": {
+    "a": 3969,
+    "b": 31454,
+    "c": 873913,
+    "d": 19435029,
+    "ROR": 2.806,
+    "ROR_CI": [
+     2.715,
+     2.901
+    ],
+    "PRR": 2.604,
+    "chi2": 4079.2,
+    "signal": true,
+    "q_BH": 0.0
+   },
+   "ANAEMIA": {
+    "a": 1164,
+    "b": 34259,
+    "c": 252290,
+    "d": 20056652,
+    "ROR": 2.701,
+    "ROR_CI": [
+     2.547,
+     2.864
+    ],
+    "PRR": 2.645,
+    "chi2": 1200.5,
+    "signal": true,
+    "q_BH": 0.0
+   },
+   "INTERSTITIAL LUNG DISEASE": {
+    "a": 216,
+    "b": 35207,
+    "c": 46823,
+    "d": 20262119,
+    "ROR": 2.655,
+    "ROR_CI": [
+     2.322,
+     3.036
+    ],
+    "PRR": 2.645,
+    "chi2": 220.4,
+    "signal": true,
+    "q_BH": 0.0
+   },
+   "CARDIAC FAILURE": {
+    "a": 702,
+    "b": 34721,
+    "c": 165618,
+    "d": 20143324,
+    "ROR": 2.459,
+    "ROR_CI": [
+     2.282,
+     2.65
+    ],
+    "PRR": 2.43,
+    "chi2": 593.2,
+    "signal": true,
+    "q_BH": 0.0
+   },
+   "ACUTE KIDNEY INJURY": {
+    "a": 587,
+    "b": 34836,
+    "c": 147012,
+    "d": 20161930,
+    "ROR": 2.311,
+    "ROR_CI": [
+     2.13,
+     2.508
+    ],
+    "PRR": 2.289,
+    "chi2": 427.6,
+    "signal": true,
+    "q_BH": 0.0
+   },
+   "FALL": {
+    "a": 1253,
+    "b": 34170,
+    "c": 322454,
+    "d": 19986488,
+    "ROR": 2.273,
+    "ROR_CI": [
+     2.148,
+     2.405
+    ],
+    "PRR": 2.228,
+    "chi2": 858.3,
+    "signal": true,
+    "q_BH": 0.0
+   },
+   "THROMBOCYTOPENIA": {
+    "a": 405,
+    "b": 35018,
+    "c": 117627,
+    "d": 20191315,
+    "ROR": 1.985,
+    "ROR_CI": [
+     1.8,
+     2.19
+    ],
+    "PRR": 1.974,
+    "chi2": 195.1,
+    "signal": false,
+    "q_BH": 0.0
+   },
+   "SEPSIS": {
+    "a": 462,
+    "b": 34961,
+    "c": 139706,
+    "d": 20169236,
+    "ROR": 1.908,
+    "ROR_CI": [
+     1.74,
+     2.092
+    ],
+    "PRR": 1.896,
+    "chi2": 196.3,
+    "signal": false,
+    "q_BH": 0.0
+   },
+   "PULMONARY EMBOLISM": {
+    "a": 297,
+    "b": 35126,
+    "c": 93341,
+    "d": 20215601,
+    "ROR": 1.831,
+    "ROR_CI": [
+     1.633,
+     2.053
+    ],
+    "PRR": 1.824,
+    "chi2": 110.8,
+    "signal": false,
+    "q_BH": 0.0
+   },
+   "HYPERTENSION": {
+    "a": 791,
+    "b": 34632,
+    "c": 255506,
+    "d": 20053436,
+    "ROR": 1.793,
+    "ROR_CI": [
+     1.67,
+     1.924
+    ],
+    "PRR": 1.775,
+    "chi2": 270.2,
+    "signal": false,
+    "q_BH": 0.0
+   },
+   "CEREBROVASCULAR ACCIDENT": {
+    "a": 471,
+    "b": 34952,
+    "c": 165531,
+    "d": 20143411,
+    "ROR": 1.64,
+    "ROR_CI": [
+     1.497,
+     1.796
+    ],
+    "PRR": 1.631,
+    "chi2": 115.7,
+    "signal": false,
+    "q_BH": 0.0
+   },
+   "HEPATIC FAILURE": {
+    "a": 117,
+    "b": 35306,
+    "c": 43041,
+    "d": 20265901,
+    "ROR": 1.56,
+    "ROR_CI": [
+     1.301,
+     1.871
+    ],
+    "PRR": 1.558,
+    "chi2": 23.4,
+    "signal": false,
+    "q_BH": 0.0
+   },
+   "MYOCARDIAL INFARCTION": {
+    "a": 531,
+    "b": 34892,
+    "c": 200478,
+    "d": 20108464,
+    "ROR": 1.526,
+    "ROR_CI": [
+     1.401,
+     1.663
+    ],
+    "PRR": 1.519,
+    "chi2": 94.7,
+    "signal": false,
+    "q_BH": 0.0
+   },
+   "FEBRILE NEUTROPENIA": {
+    "a": 162,
+    "b": 35261,
+    "c": 64044,
+    "d": 20244898,
+    "ROR": 1.452,
+    "ROR_CI": [
+     1.244,
+     1.695
+    ],
+    "PRR": 1.45,
+    "chi2": 22.7,
+    "signal": false,
+    "q_BH": 0.0
+   },
+   "NEUTROPENIA": {
+    "a": 456,
+    "b": 34967,
+    "c": 189761,
+    "d": 20119181,
+    "ROR": 1.383,
+    "ROR_CI": [
+     1.26,
+     1.517
+    ],
+    "PRR": 1.378,
+    "chi2": 47.6,
+    "signal": false,
+    "q_BH": 0.0
+   },
+   "DYSPNOEA": {
+    "a": 1123,
+    "b": 34300,
+    "c": 578138,
+    "d": 19730804,
+    "ROR": 1.117,
+    "ROR_CI": [
+     1.053,
+     1.186
+    ],
+    "PRR": 1.114,
+    "chi2": 13.4,
+    "signal": false,
+    "q_BH": 0.00025
+   }
+  }
+ }
+}

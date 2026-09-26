@@ -14,9 +14,9 @@ from collections import defaultdict, Counter
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-workspace = r"C:\Users\Bazinga\.qclaw\workspace\arptpred"
-faers_dir = os.path.join(workspace, "data", "faers")
-output_dir = os.path.join(workspace, "results")
+import paths as _paths
+faers_dir = _paths.FAERS_DIR
+output_dir = _paths.RESULTS_DIR
 os.makedirs(output_dir, exist_ok=True)
 
 ssl_ctx = ssl.create_default_context()
